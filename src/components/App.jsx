@@ -3,7 +3,7 @@ import useRecipesStore from '../Zustand/store';
 import { Recipes } from './rescipes/recipes';
 
 import { Route, Routes } from 'react-router-dom';
-import { ViewRecipe } from './rescipes/viewRecipe';
+import { ViewRecipe } from './rescipes/viewRecipe/viewRecipe';
 
 export const App = () => {
   const retchRecipes = useRecipesStore(state => state.fetchRecipes);

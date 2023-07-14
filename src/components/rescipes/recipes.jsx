@@ -6,7 +6,7 @@ export const Recipes = () => {
   const [selectedRecipes, setSelectedRecipes] = useState([]);
   const recipes = useRecipesStore(state => state.recipes).slice(0, 15);
   const deleteRecipes = useRecipesStore(state => state.deleteRecipes);
-  const retchRecipes = useRecipesStore(state => state.fetchRecipes);
+  const fetchRecipes = useRecipesStore(state => state.fetchRecipes);
   const addSelectedRecipes = id => {
     if (selectedRecipes.includes(id)) {
       const index = selectedRecipes.indexOf(id);
@@ -18,9 +18,9 @@ export const Recipes = () => {
   };
   useEffect(() => {
     if (recipes.length < 1) {
-      retchRecipes();
+      fetchRecipes();
     }
-  }, [recipes]);
+  }, [fetchRecipes, recipes.length]);
 
   const recipesDelete = e => {
     deleteRecipes(selectedRecipes);

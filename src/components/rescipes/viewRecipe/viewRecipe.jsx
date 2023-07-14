@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { Img, Li, Section, Ul } from './recipes.styled';
-import useRecipesStore from '../../Zustand/store';
+
+import useRecipesStore from '../../../Zustand/store';
+import { Div, Img, Li, Section, Ul } from './viewRecipes.styled';
 export const ViewRecipe = () => {
   const { id } = useParams();
   console.log(id);
@@ -13,6 +14,11 @@ export const ViewRecipe = () => {
       <Ul>
         <Li key={recipe.id}>
           <Img src={recipe.image_url} alt="beer" />
+          <Div>
+            <p>{recipe.description}</p>
+            <p>alcohol: {recipe.abv}%</p>
+            <p>{recipe.brewers_tips}</p>
+          </Div>
         </Li>
       </Ul>
     </Section>
