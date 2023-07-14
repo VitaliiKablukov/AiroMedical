@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AiroMedical/static/css/main.b5320759.css",
+    "main.js": "/AiroMedical/static/js/main.c659dca3.js",
+    "index.html": "/AiroMedical/index.html",
+    "main.b5320759.css.map": "/AiroMedical/static/css/main.b5320759.css.map",
+    "main.c659dca3.js.map": "/AiroMedical/static/js/main.c659dca3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5320759.css",
+    "static/js/main.c659dca3.js"
+  ]
+}
