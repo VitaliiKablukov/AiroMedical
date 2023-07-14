@@ -18,7 +18,7 @@ const useRecipesStore = create((set, get) => ({
       console.log(get().recipes);
       ids.map(id => {
         const newRecipes = get().recipes.filter(recipe => recipe.id !== id);
-        set({ recipes: newRecipes });
+        return set({ recipes: newRecipes });
       });
 
       console.log(get().recipes);
