@@ -1,16 +1,21 @@
+import { useEffect } from 'react';
+import useRecipesStore from '../Zustand/store';
+import { Recipes } from './rescipes/recipes';
+
+import { Route, Routes } from 'react-router-dom';
+import { ViewRecipe } from './rescipes/viewRecipe';
+
 export const App = () => {
+  const retchRecipes = useRecipesStore(state => state.fetchRecipes);
+
+  useEffect(() => {
+    retchRecipes();
+  }, [retchRecipes]);
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<Recipes />} />
+      <Route path="/:id" element={<ViewRecipe />} />
+    </Routes>
   );
 };
